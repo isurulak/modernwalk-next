@@ -1,0 +1,12 @@
+/* ===================================
+   DESIGN TOKENS - INDEX
+   Central import file for all design tokens
+   =================================== */
+
+/* Import all token modules */
+@import "./colors.css";
+@import "./spacing.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./effects.css";
+@import "./shadcn.css";

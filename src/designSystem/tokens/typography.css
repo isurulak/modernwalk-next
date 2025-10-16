@@ -1,0 +1,37 @@
+/* ===================================
+   TYPOGRAPHY TOKENS
+   =================================== */
+
+@theme {
+  /* ============ FONT FAMILIES ============ */
+
+  --font-family-sans: Inter, system-ui, sans-serif;
+
+  /* ============ FONT SIZES ============ */
+
+  --font-size-hero-title: 3.5rem;           /* 56px */
+  --font-size-hero-subtitle: 1.125rem;      /* 18px */
+  --font-size-section-title: 2rem;          /* 32px */
+  --font-size-category-title: 1.5rem;       /* 24px */
+  --font-size-product-title: 1.125rem;      /* 18px */
+  --font-size-product-price: 1.25rem;       /* 20px */
+  --font-size-product-description: 0.875rem; /* 14px */
+  --font-size-stat-value: 2.5rem;           /* 40px */
+  --font-size-stat-label: 0.875rem;         /* 14px */
+
+  /* ============ LINE HEIGHTS ============ */
+
+  --line-height-hero-title: 1.1;
+  --line-height-hero-subtitle: 1.6;
+  --line-height-section-title: 1.2;
+  --line-height-category-title: 1.3;
+  --line-height-product-title: 1.4;
+  --line-height-product-price: 1;
+  --line-height-product-description: 1.5;
+  --line-height-stat-value: 1;
+  --line-height-stat-label: 1.4;
+
+  /* ============ LETTER SPACING ============ */
+
+  --letter-spacing-hero: -0.02em;
+}

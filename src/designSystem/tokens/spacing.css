@@ -1,0 +1,28 @@
+/* ===================================
+   SPACING TOKENS
+   =================================== */
+
+@theme {
+  /* ============ CUSTOM SPACING VALUES ============ */
+
+  --spacing-18: 4.5rem;        /* 72px */
+  --spacing-22: 5.5rem;        /* 88px */
+  --spacing-26: 6.5rem;        /* 104px */
+  --spacing-30: 7.5rem;        /* 120px */
+
+  /* ============ SECTION SPACING ============ */
+
+  --spacing-section-y: 6rem;           /* 96px - Desktop */
+  --spacing-section-y-mobile: 3rem;    /* 48px - Mobile */
+  --spacing-section-gap: 5rem;         /* 80px */
+
+  /* ============ CONTAINER SPACING ============ */
+
+  --spacing-container-x: 5rem;         /* 80px - Desktop */
+  --spacing-container-x-mobile: 1.25rem; /* 20px - Mobile */
+
+  /* ============ CARD SPACING ============ */
+
+  --spacing-card-padding: 1.5rem;      /* 24px */
+  --spacing-card-gap: 1.5rem;          /* 24px */
+}

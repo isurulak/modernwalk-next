@@ -1,0 +1,16 @@
+/* ===================================
+   LAYOUT TOKENS
+   =================================== */
+
+@theme {
+  /* ============ CONTAINER ============ */
+
+  --container-max-width: 1440px;
+
+  /* ============ ASPECT RATIOS ============ */
+
+  --aspect-ratio-hero: 16 / 9;
+  --aspect-ratio-product: 3 / 4;
+  --aspect-ratio-category-large: 4 / 5;
+  --aspect-ratio-square: 1 / 1;
+}

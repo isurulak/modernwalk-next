@@ -1,0 +1,25 @@
+/* ===================================
+   EFFECTS TOKENS
+   =================================== */
+
+@theme {
+  /* ============ BOX SHADOWS ============ */
+
+  --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-card-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-product: 0 2px 8px 0 rgb(0 0 0 / 0.08);
+  --shadow-product-hover: 0 8px 16px 0 rgb(0 0 0 / 0.12);
+
+  /* ============ BORDER RADIUS ============ */
+
+  --radius: 0.5rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+
+  /* ============ TRANSITIONS ============ */
+
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+}
