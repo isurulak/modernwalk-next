@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Card } from "@/designSystem/primitives/card"
-import { Image, Typography } from "@/designSystem/atoms"
+import { Image, Typography, Button } from "@/designSystem/atoms"
 
 export interface ProductCardProps {
   imageUrl: string
@@ -24,7 +24,7 @@ export default function ProductCard({ imageUrl, alt = "Product image" }: Product
       </div>
 
       {/* Content Container */}
-      <div className="p-4 flex-1 space-y-2">
+      <div className="p-4 flex-1 flex flex-col space-y-2">
         <Typography variant="title" className="line-clamp-2">
           Premium Wireless Headphones
         </Typography>
@@ -34,6 +34,9 @@ export default function ProductCard({ imageUrl, alt = "Product image" }: Product
         <Typography variant="body-sm" className="text-primary">
           $299.99
         </Typography>
+        <Button colorVariant="primary" size="medium" width="fullWidth">
+          + Add to Cart
+        </Button>
       </div>
     </Card>
   )

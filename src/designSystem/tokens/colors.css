@@ -6,6 +6,7 @@
   /* ============ BASE COLORS ============ */
 
   --color-primary: #171717;
+  --color-primary-foreground: #FFFFFF;
   --color-secondary: #D4D4D4;
   --color-muted: #F5F5F5;
   --color-muted-foreground: #737373;
