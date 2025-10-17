@@ -9,6 +9,12 @@
 
   /* ============ FONT SIZES ============ */
 
+  /* Base Text Sizes */
+  --font-size-b: 1rem;                      /* 16px - base */
+  --font-size-s: 0.875rem;                  /* 14px - small */
+  --font-size-es: 0.75rem;                  /* 12px - extra small */
+
+  /* Semantic Sizes */
   --font-size-hero-title: 3.5rem;           /* 56px */
   --font-size-hero-subtitle: 1.125rem;      /* 18px */
   --font-size-section-title: 2rem;          /* 32px */
