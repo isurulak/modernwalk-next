@@ -1,7 +1,22 @@
+import { Section } from "@/designSystem/atoms"
+import { CardGrid, ProductCard } from "@/designSystem/molecules"
+
 export default function MostPopularSection() {
+  const productImage = "https://png.pngtree.com/png-vector/20240611/ourmid/pngtree-mock-up-cosmetic-products-for-skin-and-hair-care-with-plant-png-image_12702096.png"
+
   return (
-    <section>
-      <h2>MostPopularSection</h2>
-    </section>
+    <Section>
+      <h2>Most Popular</h2>
+      <CardGrid columns={4} gap="lg">
+        <ProductCard imageUrl={productImage} alt="Product 1" />
+        <ProductCard imageUrl={productImage} alt="Product 2" />
+        <ProductCard imageUrl={productImage} alt="Product 3" />
+        <ProductCard imageUrl={productImage} alt="Product 4" />
+        <ProductCard imageUrl={productImage} alt="Product 5" />
+        <ProductCard imageUrl={productImage} alt="Product 6" />
+        <ProductCard imageUrl={productImage} alt="Product 7" />
+        <ProductCard imageUrl={productImage} alt="Product 8" />
+      </CardGrid>
+    </Section>
   )
 }
