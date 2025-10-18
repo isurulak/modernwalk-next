@@ -1,5 +1,6 @@
 export * from "./BreadcrumbSection"
 export * from "./Footer"
 export * from "./Navbar"
+export * from "./OrderSummary"
 export * from "./PageTitle"
 export * from "./ProductGallery"

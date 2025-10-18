@@ -4,12 +4,13 @@ import { Icon, type IconName, Link } from "@/designSystem/atoms"
 import { cn } from "@/lib/utils"
 
 const iconButtonVariants = cva(
-  "relative flex items-center justify-center w-10 h-10 rounded-lg transition-colors",
+  "relative flex items-center justify-center transition-colors",
   {
     variants: {
       variant: {
-        primary: "bg-background text-primary hover:bg-muted",
-        ghost: "bg-transparent text-primary hover:bg-muted",
+        primary: "w-10 h-10 rounded-lg bg-background text-primary hover:bg-muted",
+        ghost: "w-10 h-10 rounded-lg bg-transparent text-primary hover:bg-muted",
+        dark: "w-8 h-8 rounded-full bg-primary text-primary-foreground hover:bg-primary/80",
       },
     },
     defaultVariants: {
@@ -29,7 +30,7 @@ export interface IconButtonProps
 
 const IconButton = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, IconButtonProps>(
   ({ icon, variant, badgeCount, href, className, onClick, ...props }, ref) => {
-    const iconSize = variant === "primary" ? 14 : 24
+    const iconSize = variant === "primary" ? 14 : variant === "dark" ? 16 : 24
     const classes = cn(iconButtonVariants({ variant }), className)
 
     const content = (

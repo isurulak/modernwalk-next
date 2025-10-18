@@ -1,4 +1,5 @@
 export * from "./CardGrid"
+export * from "./CartCard"
 export * from "./CategoryCard"
 export * from "./CategoryCardGrid"
 export * from "./CheckboxWithLabel"
