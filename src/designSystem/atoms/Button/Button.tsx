@@ -14,7 +14,7 @@ const buttonAtomVariants = cva("", {
     },
     size: {
       small: "h-5 px-3 py-1.5",
-      medium: "h-7 px-8 py-1.5",
+      medium: "h-10 px-8 py-1.5",
       large: "h-9 px-8 py-1.5",
       link: "h-6 px-0.5 py-1.5",
     },

@@ -11,8 +11,8 @@ export default function Section({
   ...props
 }: SectionProps) {
   return (
-    <section className="w-full px-16 pb-32" {...props}>
-      <div className={cn("max-w-[1200px] mx-auto", className)}>
+    <section className={cn("w-full px-16 pb-32", className)} {...props}>
+      <div className="max-w-[1200px] mx-auto">
         {children}
       </div>
     </section>
