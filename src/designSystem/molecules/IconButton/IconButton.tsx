@@ -8,7 +8,7 @@ const iconButtonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+        primary: "bg-background text-primary hover:bg-muted",
         ghost: "bg-transparent text-primary hover:bg-muted",
       },
     },

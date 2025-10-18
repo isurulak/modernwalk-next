@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Star, ArrowRight, Search, Mail, ShoppingCart, User, Facebook, Twitter, Instagram, type LucideIcon } from "lucide-react"
+import { Star, ArrowRight, Search, Mail, ShoppingCart, User, Facebook, Twitter, Instagram, Minus, Plus, type LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const icons = {
@@ -12,6 +12,8 @@ const icons = {
   facebook: Facebook,
   twitter: Twitter,
   instagram: Instagram,
+  minus: Minus,
+  plus: Plus,
 } as const
 
 export type IconName = keyof typeof icons
