@@ -1,4 +1,6 @@
 export * from "./CardGrid"
+export * from "./CategoryCard"
+export * from "./CategoryCardGrid"
 export * from "./ProductCard"
 export * from "./Rating"
 export * from "./SectionTitle"
