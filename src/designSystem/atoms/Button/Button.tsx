@@ -9,7 +9,8 @@ const buttonAtomVariants = cva("", {
     colorVariant: {
       primary: "!text-primary-foreground",
       secondary: "bg-secondary !text-primary hover:bg-secondary/90",
-      link: "bg-transparent !text-primary",
+      "link-dark": "bg-transparent !text-primary",
+      "link-light": "bg-transparent !text-background",
     },
     size: {
       small: "h-5 px-3 py-1.5",
@@ -22,6 +23,12 @@ const buttonAtomVariants = cva("", {
       fullWidth: "w-full",
     },
   },
+  compoundVariants: [
+    {
+      colorVariant: ["link-dark", "link-light"],
+      class: "!w-auto",
+    },
+  ],
   defaultVariants: {
     colorVariant: "primary",
     size: "medium",

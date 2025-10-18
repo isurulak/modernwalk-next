@@ -37,13 +37,13 @@ export default function CategoryCard({
 
       {/* Content Container - Aligned to bottom */}
       <div className="relative z-10 h-full flex flex-col justify-end">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 items-start">
           <Typography variant="heading-md" className="text-background">
             {title}
           </Typography>
           <Button
-            colorVariant="secondary"
-            size="medium"
+            colorVariant="link-light"
+            size="link"
             icon={<Icon name="arrowRight" size={16} />}
             iconPosition="right"
             onClick={onLinkClick}

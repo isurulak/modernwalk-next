@@ -20,7 +20,7 @@ export default function SectionTitle({
     <div className={`flex justify-between items-center ${className || ""}`}>
       <Typography variant="subtitle">{title}</Typography>
       <Button
-        colorVariant="link"
+        colorVariant="link-dark"
         size="link"
         icon={<Icon name="arrowRight" size={16} />}
         iconPosition="right"

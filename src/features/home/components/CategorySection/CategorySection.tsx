@@ -2,7 +2,7 @@ import { Section } from "@/designSystem/atoms"
 import { CategoryCardGrid, SectionTitle } from "@/designSystem/molecules"
 
 export default function CategorySection() {
-  const productImage = "https://png.pngtree.com/png-vector/20240611/ourmid/pngtree-mock-up-cosmetic-products-for-skin-and-hair-care-with-plant-png-image_12702096.png"
+  const categoryImage = "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=736"
 
   return (
     <Section className="pt-32">
@@ -10,19 +10,19 @@ export default function CategorySection() {
       <CategoryCardGrid
         cards={[
           {
-            imageUrl: productImage,
+            imageUrl: categoryImage,
             alt: "Skincare Category",
             title: "Skincare",
             linkText: "Shop Now",
           },
           {
-            imageUrl: productImage,
+            imageUrl: categoryImage,
             alt: "Haircare Category",
             title: "Haircare",
             linkText: "Shop Now",
           },
           {
-            imageUrl: productImage,
+            imageUrl: categoryImage,
             alt: "Makeup Category",
             title: "Makeup",
             linkText: "Shop Now",
