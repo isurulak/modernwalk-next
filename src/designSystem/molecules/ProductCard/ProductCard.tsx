@@ -1,13 +1,17 @@
-import * as React from "react"
-import { Card } from "@/designSystem/primitives/card"
-import { Image, Typography, Button } from "@/designSystem/atoms"
+import * as React from "react";
+import { Card } from "@/designSystem/primitives/card";
+import { Image, Typography, Button } from "@/designSystem/atoms";
+import { Rating } from "@/designSystem/molecules";
 
 export interface ProductCardProps {
-  imageUrl: string
-  alt?: string
+  imageUrl: string;
+  alt?: string;
 }
 
-export default function ProductCard({ imageUrl, alt = "Product image" }: ProductCardProps) {
+export default function ProductCard({
+  imageUrl,
+  alt = "Product image",
+}: ProductCardProps) {
   return (
     <Card className="h-full">
       {/* Image Container with 250:224 aspect ratio */}
@@ -28,16 +32,24 @@ export default function ProductCard({ imageUrl, alt = "Product image" }: Product
         <Typography variant="title" className="line-clamp-2">
           Premium Wireless Headphones
         </Typography>
-        <Typography variant="body-sm" className="text-muted-foreground line-clamp-2">
-          High-quality audio with active noise cancellation and 30-hour battery life
+        <div className="flex justify-between items-center">
+          <Typography variant="body-sm" className="text-primary">
+            $299.99
+          </Typography>
+          <Rating rating={4.5} />
+        </div>
+        <Typography
+          variant="body-xs"
+          className="text-muted-foreground line-clamp-2"
+        >
+          High-quality audio with active noise cancellation and 30-hour battery
+          life
         </Typography>
-        <Typography variant="body-sm" className="text-primary">
-          $299.99
-        </Typography>
-        <Button colorVariant="primary" size="medium" width="fullWidth">
+
+        <Button colorVariant="secondary" size="medium" width="fullWidth">
           + Add to Cart
         </Button>
       </div>
     </Card>
-  )
+  );
 }
