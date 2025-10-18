@@ -31,7 +31,6 @@ const Icon = React.forwardRef<SVGSVGElement, IconProps>(
         ref={ref}
         size={size}
         color={color}
-        fill={color}
         className={cn(className)}
         {...props}
       />
