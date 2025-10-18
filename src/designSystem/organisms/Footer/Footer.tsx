@@ -17,7 +17,7 @@ export default function Footer({ className }: FooterProps) {
             {/* Logo */}
             <Link href="/">
               <Typography variant="heading-lg" as="span">
-                MW
+                MW.
               </Typography>
             </Link>
 

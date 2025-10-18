@@ -17,8 +17,8 @@ export default function PageTitle({
   className,
 }: PageTitleProps) {
   return (
-    <Section className={`pt-0 pb-16 ${className || ""}`}>
-      <div className="flex justify-between items-center border-b border-border pb-6">
+    // <Section className={`pt-0 pb-16 ${className || ""}`}>
+      <div className="flex pb-16 justify-between items-center border-b border-border">
         <Typography variant="heading-lg">{title}</Typography>
         {sortOptions && sortOptions.length > 0 && (
           <Select
@@ -29,6 +29,6 @@ export default function PageTitle({
           />
         )}
       </div>
-    </Section>
+    // </Section>
   )
 }

@@ -9,12 +9,12 @@ export interface NavbarProps {
 
 export default function Navbar({ cartCount = 0, className }: NavbarProps) {
   return (
-    <nav className={`w-full px-16 py-8 ${className || ""}`}>
+    <nav className={`w-full px-16 py-8 border-b border-border ${className || ""}`}>
       <div className="mx-auto max-w-[1200px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/">
           <Typography variant="heading-lg" as="span">
-            MW
+            MW.
           </Typography>
         </Link>
 

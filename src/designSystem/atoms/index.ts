@@ -1,5 +1,6 @@
 export * from "./Breadcrumb"
 export * from "./Button"
+export * from "./Checkbox"
 export * from "./Icon"
 export * from "./Image"
 export * from "./Input"

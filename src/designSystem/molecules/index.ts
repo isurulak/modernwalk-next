@@ -1,6 +1,7 @@
 export * from "./CardGrid"
 export * from "./CategoryCard"
 export * from "./CategoryCardGrid"
+export * from "./CheckboxWithLabel"
 export * from "./IconButton"
 export * from "./NavLink"
 export * from "./ProductCard"
