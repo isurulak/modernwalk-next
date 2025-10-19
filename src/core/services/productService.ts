@@ -17,4 +17,8 @@ export const productService = {
       : `/products/category/${category}`
     return apiClient<Product[]>(endpoint)
   },
+
+  getProductById: async (id: number): Promise<Product> => {
+    return apiClient<Product>(`/products/${id}`)
+  },
 }

@@ -1,9 +1,11 @@
 import * as React from "react";
+import Link from "next/link";
 import { Card } from "@/designSystem/primitives/card";
 import { Image, Typography, Button } from "@/designSystem/atoms";
 import { Rating } from "@/designSystem/molecules";
 
 export interface ProductCardProps {
+  id: number;
   title: string;
   price: number;
   rating: number;
@@ -13,6 +15,7 @@ export interface ProductCardProps {
 }
 
 export default function ProductCard({
+  id,
   title,
   price,
   rating,
@@ -21,7 +24,8 @@ export default function ProductCard({
   description,
 }: ProductCardProps) {
   return (
-    <Card className="h-full">
+    <Link href={`/product/${id}`} className="block h-full">
+      <Card className="h-full cursor-pointer transition-transform hover:scale-[1.02]">
       {/* Image Container with 250:224 aspect ratio */}
       <div className="p-4">
         <div className="relative w-full aspect-[250/224] overflow-hidden rounded-lg">
@@ -62,5 +66,6 @@ export default function ProductCard({
         </Button>
       </div>
     </Card>
+    </Link>
   );
 }
