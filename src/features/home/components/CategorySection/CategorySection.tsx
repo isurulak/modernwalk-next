@@ -1,7 +1,29 @@
 import { Section } from "@/designSystem/atoms"
 import { CategoryCardGrid, SectionTitle } from "@/designSystem/molecules"
 
-const categoryCards = [
+const categoryCards: [
+  {
+    imageUrl: string
+    alt: string
+    title: string
+    linkText: string
+    linkHref: string
+  },
+  {
+    imageUrl: string
+    alt: string
+    title: string
+    linkText: string
+    linkHref: string
+  },
+  {
+    imageUrl: string
+    alt: string
+    title: string
+    linkText: string
+    linkHref: string
+  }
+] = [
   {
     imageUrl: "/new_arrivals.png",
     alt: "New Arrivals",
@@ -23,7 +45,7 @@ const categoryCards = [
     linkText: "Shop Now",
     linkHref: "/shop?category=men's clothing",
   },
-] as const
+]
 
 export default function CategorySection() {
   return (

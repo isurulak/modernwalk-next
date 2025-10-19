@@ -1,10 +1,11 @@
 "use client"
 
 import * as React from "react"
-import { Checkbox, type CheckboxProps } from "@/designSystem/atoms/Checkbox"
+import { Checkbox } from "@/designSystem/atoms/Checkbox"
+import { Checkbox as ShadcnCheckbox } from "@/designSystem/primitives/checkbox"
 import { Typography } from "@/designSystem/atoms/Typography"
 
-export interface CheckboxWithLabelProps extends CheckboxProps {
+export interface CheckboxWithLabelProps extends React.ComponentPropsWithoutRef<typeof ShadcnCheckbox> {
   label: string
   id: string
 }

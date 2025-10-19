@@ -30,7 +30,7 @@ const typographyVariants = cva("m-0 leading-none", {
 })
 
 // Map variants → semantic tags
-const variantToTag: Record<string, keyof JSX.IntrinsicElements> = {
+const variantToTag: Record<string, React.ElementType> = {
   display: "h1",
   "heading-lg": "h2",
   "heading-md": "h3",
@@ -52,12 +52,12 @@ const variantToTag: Record<string, keyof JSX.IntrinsicElements> = {
 export interface TypographyProps
   extends React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof typographyVariants> {
-  as?: keyof JSX.IntrinsicElements
+  as?: React.ElementType
 }
 
 const Typography = React.forwardRef<HTMLElement, TypographyProps>(
   ({ variant, as, className, ...props }, ref) => {
-    const Component = (as || variantToTag[variant || "body"] || "p") as any
+    const Component = (as || variantToTag[variant || "body"] || "p") as React.ElementType
 
     return (
       <Component

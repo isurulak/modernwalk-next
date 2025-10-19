@@ -23,7 +23,7 @@ export default function Footer({ className }: FooterProps) {
 
             {/* Description */}
             <Typography variant="body-xs" className="text-muted-foreground max-w-[248px]">
-              We have clothes that suits your style and which you're proud to wear. From women to men.
+              We have clothes that suits your style and which you&apos;re proud to wear. From women to men.
             </Typography>
 
             {/* Social Icons */}

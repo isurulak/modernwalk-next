@@ -46,7 +46,6 @@ export default function CategoryCard({
             size="link"
             icon={<Icon name="arrowRight" size={16} />}
             iconPosition="right"
-            as="span"
           >
             {linkText}
           </Button>
