@@ -19,10 +19,10 @@ export default function CartPage() {
   const items = useCartStore((state) => state.items);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   const updateQuantity = useCartStore((state) => state.updateQuantity);
-  const getSubtotal = useCartStore((state) => state.getSubtotal());
-  const getTax = useCartStore((state) => state.getTax());
-  const getShipping = useCartStore((state) => state.getShipping());
-  const getGrandTotal = useCartStore((state) => state.getGrandTotal());
+  const subtotal = useCartStore((state) => state.subtotal);
+  const tax = useCartStore((state) => state.tax);
+  const shipping = useCartStore((state) => state.shipping);
+  const grandTotal = useCartStore((state) => state.grandTotal);
   return (
     <>
       <BreadcrumbSection items={breadcrumbItems} />
@@ -68,11 +68,11 @@ export default function CartPage() {
             {/* Right Column - Order Summary */}
             <div className="w-[486px]">
               <OrderSummary
-                subtotal={`$${getSubtotal.toFixed(2)}`}
-                shipping={`$${getShipping.toFixed(2)}`}
-                tax={`$${getTax.toFixed(2)}`}
+                subtotal={`$${subtotal.toFixed(2)}`}
+                shipping={`$${shipping.toFixed(2)}`}
+                tax={`$${tax.toFixed(2)}`}
                 taxPercentage="10%"
-                grandTotal={`$${getGrandTotal.toFixed(2)}`}
+                grandTotal={`$${grandTotal.toFixed(2)}`}
                 onCheckout={() => console.log("Proceed to checkout")}
               />
             </div>

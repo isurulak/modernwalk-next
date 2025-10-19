@@ -10,7 +10,12 @@ export interface NavbarProps {
 }
 
 export default function Navbar({ className }: NavbarProps) {
-  const cartCount = useCartStore((state) => state.getCartCount())
+  const [mounted, setMounted] = React.useState(false)
+  const cartCount = useCartStore((state) => state.cartCount)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
   return (
     <nav className={`w-full px-16 py-8 border-b border-border ${className || ""}`}>
       <div className="mx-auto max-w-[1200px] flex items-center justify-between">
@@ -41,7 +46,7 @@ export default function Navbar({ className }: NavbarProps) {
           <IconButton
             icon="shoppingCart"
             variant="ghost"
-            badgeCount={cartCount}
+            badgeCount={mounted ? cartCount : undefined}
             href="/cart"
           />
           <IconButton icon="user" variant="ghost" href="/account" />
