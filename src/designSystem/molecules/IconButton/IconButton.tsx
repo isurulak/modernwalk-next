@@ -37,7 +37,7 @@ const IconButton = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, IconB
       <>
         <Icon name={icon} size={iconSize} />
         {badgeCount !== undefined && badgeCount > 0 && (
-          <span className="absolute -top-1 -right-1 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-primary text-primary-foreground text-es font-medium rounded-full">
+          <span className="absolute top-3 -right-4 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-background text-primary text-es font-medium rounded-full">
             {badgeCount > 99 ? "99+" : badgeCount}
           </span>
         )}

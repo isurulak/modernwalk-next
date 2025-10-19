@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Star, ArrowRight, Search, Mail, ShoppingCart, User, Facebook, Twitter, Instagram, Minus, Plus, X, type LucideIcon } from "lucide-react"
+import { Star, ArrowRight, Search, Mail, Handbag, User, Facebook, Twitter, Instagram, Minus, Plus, X, type LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const icons = {
@@ -7,7 +7,7 @@ const icons = {
   arrowRight: ArrowRight,
   search: Search,
   mail: Mail,
-  shoppingCart: ShoppingCart,
+  shoppingCart: Handbag,
   user: User,
   facebook: Facebook,
   twitter: Twitter,
