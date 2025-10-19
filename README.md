@@ -334,6 +334,5 @@ You might notice some spacing issues in the implementation in some parts of the 
 
 ---
 
-**Live Demo**: [Add your Vercel deployment URL here]
 
-**Repository**: [Add your GitHub repository URL here]
+**Repository**: https://github.com/isurulak/modernwalk-next
