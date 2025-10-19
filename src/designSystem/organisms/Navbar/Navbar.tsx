@@ -1,13 +1,16 @@
+"use client"
+
 import * as React from "react"
 import { Link, Typography, Input } from "@/designSystem/atoms"
 import { NavLink, IconButton } from "@/designSystem/molecules"
+import { useCartStore } from "@/core/store/cartStore"
 
 export interface NavbarProps {
-  cartCount?: number
   className?: string
 }
 
-export default function Navbar({ cartCount = 0, className }: NavbarProps) {
+export default function Navbar({ className }: NavbarProps) {
+  const cartCount = useCartStore((state) => state.getCartCount())
   return (
     <nav className={`w-full px-16 py-8 border-b border-border ${className || ""}`}>
       <div className="mx-auto max-w-[1200px] flex items-center justify-between">

@@ -10,6 +10,7 @@ import {
 } from "@/designSystem/molecules"
 import { BreadcrumbSection, ProductGallery } from "@/designSystem/organisms"
 import { useProductDetail } from "../../hooks/useProductDetail"
+import { useCartStore } from "@/core/store/cartStore"
 
 const sizes = ["Small", "Medium", "Large", "X-Large"]
 
@@ -19,6 +20,7 @@ export interface ProductPageProps {
 
 export default function ProductPage({ productId }: ProductPageProps) {
   const { product, isLoading } = useProductDetail(productId)
+  const addToCart = useCartStore((state) => state.addToCart)
   const [selectedSize, setSelectedSize] = useState<string | null>(null)
   const [quantity, setQuantity] = useState(1)
   const [sizeError, setSizeError] = useState(false)
@@ -28,8 +30,11 @@ export default function ProductPage({ productId }: ProductPageProps) {
       setSizeError(true)
       return
     }
-    // TODO: Add to cart logic
-    console.log("Add to cart:", { product, selectedSize, quantity })
+    if (!product) return
+
+    addToCart(product, selectedSize, quantity)
+    setSelectedSize(null)
+    setQuantity(1)
   }
 
   const handleSizeChange = (size: string) => {

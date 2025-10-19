@@ -1,12 +1,13 @@
 "use client";
 
-import { Button, Section } from "@/designSystem/atoms";
+import { Section, Typography } from "@/designSystem/atoms";
 import { CartCard } from "@/designSystem/molecules";
 import {
   BreadcrumbSection,
   PageTitle,
   OrderSummary,
 } from "@/designSystem/organisms";
+import { useCartStore } from "@/core/store/cartStore";
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },
@@ -14,37 +15,14 @@ const breadcrumbItems = [
   { label: "Cart", href: "/cart" },
 ];
 
-const productImage =
-  "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=736";
-
-const cartItems = [
-  {
-    id: 1,
-    productImage,
-    productName: "Men's Cotton Jacket",
-    size: "Medium",
-    price: "$95.00",
-    quantity: 1,
-  },
-  {
-    id: 2,
-    productImage,
-    productName: "Urban Slim-Fit Shirt",
-    size: "Small",
-    price: "$85.00",
-    quantity: 2,
-  },
-  {
-    id: 3,
-    productImage,
-    productName: "Classic Denim Jeans",
-    size: "Large",
-    price: "$75.00",
-    quantity: 1,
-  },
-];
-
 export default function CartPage() {
+  const items = useCartStore((state) => state.items);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
+  const updateQuantity = useCartStore((state) => state.updateQuantity);
+  const getSubtotal = useCartStore((state) => state.getSubtotal());
+  const getTax = useCartStore((state) => state.getTax());
+  const getShipping = useCartStore((state) => state.getShipping());
+  const getGrandTotal = useCartStore((state) => state.getGrandTotal());
   return (
     <>
       <BreadcrumbSection items={breadcrumbItems} />
@@ -52,37 +30,54 @@ export default function CartPage() {
       <Section>
         <PageTitle title="Shopping Cart" />
 
-        {/* Two Column Layout */}
-        <div className="flex gap-6 mt-16">
-          {/* Left Column - Cart Items */}
-          <div className="flex-1 flex flex-col gap-4">
-            {cartItems.map((item) => (
-              <CartCard
-                key={item.id}
-                productImage={item.productImage}
-                productName={item.productName}
-                size={item.size}
-                price={item.price}
-                quantity={item.quantity}
-                onIncrement={() => {}}
-                onDecrement={() => {}}
-                onRemove={() => {}}
-              />
-            ))}
+        {items.length === 0 ? (
+          <div className="text-center py-16">
+            <Typography variant="body">Your cart is empty</Typography>
           </div>
+        ) : (
+          <div className="flex gap-6 mt-16">
+            {/* Left Column - Cart Items */}
+            <div className="flex-1 flex flex-col gap-4">
+              {items.map((item) => (
+                <CartCard
+                  key={`${item.product.id}-${item.size}`}
+                  productImage={item.product.image}
+                  productName={item.product.title}
+                  size={item.size}
+                  price={`$${item.product.price.toFixed(2)}`}
+                  quantity={item.quantity}
+                  onIncrement={() =>
+                    updateQuantity(
+                      item.product.id,
+                      item.size,
+                      item.quantity + 1
+                    )
+                  }
+                  onDecrement={() =>
+                    updateQuantity(
+                      item.product.id,
+                      item.size,
+                      Math.max(1, item.quantity - 1)
+                    )
+                  }
+                  onRemove={() => removeFromCart(item.product.id, item.size)}
+                />
+              ))}
+            </div>
 
-          {/* Right Column - Order Summary */}
-          <div className="w-[486px]">
-            <OrderSummary
-              subtotal="$255.00"
-              shipping="$5.00"
-              tax="$26.00"
-              taxPercentage="10%"
-              grandTotal="$286.00"
-              onCheckout={() => {}}
-            />
+            {/* Right Column - Order Summary */}
+            <div className="w-[486px]">
+              <OrderSummary
+                subtotal={`$${getSubtotal.toFixed(2)}`}
+                shipping={`$${getShipping.toFixed(2)}`}
+                tax={`$${getTax.toFixed(2)}`}
+                taxPercentage="10%"
+                grandTotal={`$${getGrandTotal.toFixed(2)}`}
+                onCheckout={() => console.log("Proceed to checkout")}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </Section>
     </>
   );
