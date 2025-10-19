@@ -4,47 +4,58 @@ import { Image, Typography, Button } from "@/designSystem/atoms";
 import { Rating } from "@/designSystem/molecules";
 
 export interface ProductCardProps {
-  imageUrl: string;
-  alt?: string;
+  title: string;
+  price: number;
+  rating: number;
+  imageSrc: string;
+  imageAlt?: string;
+  description?: string;
 }
 
 export default function ProductCard({
-  imageUrl,
-  alt = "Product image",
+  title,
+  price,
+  rating,
+  imageSrc,
+  imageAlt = "Product image",
+  description,
 }: ProductCardProps) {
   return (
     <Card className="h-full">
       {/* Image Container with 250:224 aspect ratio */}
       <div className="p-4">
         <div className="relative w-full aspect-[250/224] overflow-hidden rounded-lg">
-          <Image
-            src={imageUrl}
-            alt={alt}
-            fill
-            fit="cover"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-          />
+          {imageSrc && (
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              fit="cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+            />
+          )}
         </div>
       </div>
 
       {/* Content Container */}
       <div className="p-4 flex-1 flex flex-col space-y-2">
         <Typography variant="title" className="line-clamp-2">
-          Premium Wireless Headphones
+          {title}
         </Typography>
         <div className="flex justify-between items-center">
           <Typography variant="body-sm" className="text-primary">
-            $299.99
+            ${price.toFixed(2)}
           </Typography>
-          <Rating rating={4.5} />
+          <Rating rating={rating} />
         </div>
-        <Typography
-          variant="body-xs"
-          className="text-muted-foreground line-clamp-2"
-        >
-          High-quality audio with active noise cancellation and 30-hour battery
-          life
-        </Typography>
+        {description && (
+          <Typography
+            variant="body-xs"
+            className="text-muted-foreground line-clamp-2"
+          >
+            {description}
+          </Typography>
+        )}
 
         <Button colorVariant="secondary" size="medium" width="fullWidth">
           + Add to Cart

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Image, Typography, Button, Icon } from "@/designSystem/atoms"
+import { Image, Typography, Button, Icon, Link } from "@/designSystem/atoms"
 
 export interface CategoryCardProps {
   imageUrl: string
@@ -20,7 +20,7 @@ export default function CategoryCard({
   onLinkClick,
   className,
 }: CategoryCardProps) {
-  return (
+  const content = (
     <div className={`relative w-full h-full p-8 overflow-hidden rounded-xl ${className || ""}`}>
       {/* Background Image - Absolute positioning covering entire container */}
       <div className="absolute inset-0 z-0">
@@ -46,8 +46,7 @@ export default function CategoryCard({
             size="link"
             icon={<Icon name="arrowRight" size={16} />}
             iconPosition="right"
-            onClick={onLinkClick}
-            {...(linkHref && { as: "a", href: linkHref })}
+            as="span"
           >
             {linkText}
           </Button>
@@ -55,4 +54,22 @@ export default function CategoryCard({
       </div>
     </div>
   )
+
+  if (linkHref) {
+    return (
+      <Link href={linkHref} className="block h-full cursor-pointer transition-transform hover:scale-[1.02]">
+        {content}
+      </Link>
+    )
+  }
+
+  if (onLinkClick) {
+    return (
+      <button onClick={onLinkClick} className="block h-full w-full cursor-pointer transition-transform hover:scale-[1.02]">
+        {content}
+      </button>
+    )
+  }
+
+  return content
 }

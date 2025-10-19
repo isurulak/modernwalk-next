@@ -1,8 +1,11 @@
+"use client"
+
 import { Section } from "@/designSystem/atoms"
 import { CardGrid, ProductCard } from "@/designSystem/molecules"
 import { BreadcrumbSection, PageTitle } from "@/designSystem/organisms"
 import { CategoryFilter } from "../CategoryFilter"
 import { ShopLayout } from "../ShopLayout"
+import { useShopProducts } from "../../hooks/useShopProducts"
 
 const sortOptions = [
   { value: "most-popular", label: "Most Popular" },
@@ -24,17 +27,9 @@ const categoryOptions = [
   { id: "accessories", label: "Accessories", checked: false },
 ]
 
-// Mock product data
-const mockProducts = Array.from({ length: 20 }, (_, i) => ({
-  id: `product-${i + 1}`,
-  title: `Product ${i + 1}`,
-  price: 99 + i * 10,
-  rating: 4.5,
-  imageSrc: "/product_image.png",
-  imageAlt: `Product ${i + 1}`,
-}))
-
 export default function ShopPage() {
+  const { products, isLoading } = useShopProducts()
+
   return (
     <>
       <BreadcrumbSection items={breadcrumbItems} />
@@ -53,18 +48,25 @@ export default function ShopPage() {
             </div>
           }
           products={
-            <CardGrid columns={3}>
-              {mockProducts.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  title={product.title}
-                  price={product.price}
-                  rating={product.rating}
-                  imageSrc={product.imageSrc}
-                  imageAlt={product.imageAlt}
-                />
-              ))}
-            </CardGrid>
+            isLoading ? (
+              <div className="text-center py-8">Loading products...</div>
+            ) : products.length === 0 ? (
+              <div className="text-center py-8">No products found.</div>
+            ) : (
+              <CardGrid columns={3}>
+                {products.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    title={product.title}
+                    price={product.price}
+                    rating={product.rating.rate}
+                    imageSrc={product.image}
+                    imageAlt={product.title}
+                    description={product.description}
+                  />
+                ))}
+              </CardGrid>
+            )
           }
         />
       </Section>
